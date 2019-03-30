@@ -1,0 +1,29 @@
+//https://codeforces.com/contest/1143/problem/A
+#include<bits/stdc++.h>
+using namespace std;
+#define loop(i,a,b) for(int i=a;i<b;++i)
+bool ispresent(short,short [],long,long);
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    long n,k=0;
+    cin>>n;
+    short door[n];
+    loop(i,0,n)
+        cin>>door[i];
+    loop(i,0,n){
+        k++;
+        if(!ispresent(door[i],door,i,n))
+            break;
+    }
+    cout<<k;
+    return 0;
+}
+bool ispresent(short x, short a[], long cur,long size){
+    loop(i,cur+1,size){
+        if(a[i]==x){
+            return true;
+        }
+    }
+    return false;
+}
