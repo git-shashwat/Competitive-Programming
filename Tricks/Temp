@@ -1,8 +1,10 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
+#define FastIO ios_base::sync_with_stdio(false);    cin.tie(false);
+#define test int t; cin>>t; while(t--)
+#define loop(i,a,b) for(int i=a;i<b;++i)
+#define MOD 1000000007
 using namespace std;
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+
+int main(){
     return 0;
 }
