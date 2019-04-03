@@ -1,0 +1,40 @@
+//https://www.codechef.com/LTIME70B/problems/TSTROBOT
+#include<bits/stdc++.h>
+using namespace std;
+#define loop(i,a,b) for(int i=a;i<b;++i)
+#define revloop(i,a,b) for(int i=a;i>b;--i)
+#define test int t; cin>>t; while(t--)
+#define long long int lli;
+#define unsigned long long ull;
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    test{
+        int N,mid,pos,size;
+        long int X,cnt=0;
+        cin>>N>>X;
+        char S[N];
+        loop(i,0,N)
+            cin>>S[i];
+        mid=N;
+        size=(2*N)+1;
+        bool record[size]={false};
+        record[mid]=true;
+        pos=mid;
+        loop(i,0,N){
+            if(S[i]=='R'){
+                pos++;
+            }
+            else{
+                pos--;
+              }
+               record[pos]=true;
+        }
+        loop(i,0,size){
+            if(record[i]==true)
+                cnt++;
+        }
+        cout<<cnt<<"\n";
+    }
+    return 0;
+}
