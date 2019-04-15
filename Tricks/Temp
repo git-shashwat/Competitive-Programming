@@ -3,8 +3,10 @@
 #define test int t; cin>>t; while(t--)
 #define loop(i,a,b) for(int i=a;i<b;++i)
 #define MOD 1000000007
+#define ll long long
 using namespace std;
 
 int main(){
+    
     return 0;
 }
