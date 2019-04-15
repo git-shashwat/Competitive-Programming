@@ -7,7 +7,7 @@ using namespace std;
 
 int main(){
     short n,pos=0;
-    long t;
+    long t,b;
     cin>>n>>t;
     long s[n],d[n],min;
     min=MOD;
