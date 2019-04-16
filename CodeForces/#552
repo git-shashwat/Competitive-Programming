@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+#define FastIO ios_base::sync_with_stdio(false);    cin.tie(false);
+#define test int t; cin>>t; while(t--)
+#define loop(i,a,b) for(int i=a;i<b;++i)
+#define MOD 1000000007
+using namespace std;
+
+int main(){
+    short n,pos=0;
+    long t,b;
+    cin>>n>>t;
+    long s[n],d[n],min;
+    min=MOD;
+    loop(i,0,n){
+        cin>>s[i]>>d[i];
+        if(s[i]<t){
+           if(d[i]-(t-s[i])<min){
+               min=(d[i]-(t-s[i]));
+               pos=i;
+           }
+        }
+        else if(s[i]>t){
+            if(s[i]-t<min){
+                min=s[i]-t;
+                pos=i;
+            }
+        }
+        else{
+            cout<<i+1;
+            exit(0);
+        }
+    }
+    cout<<pos+1;
+    return 0;
+}
