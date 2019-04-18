@@ -10,15 +10,8 @@ using namespace std;
 
 /*Declaration of stone()*/
 ll stone(ll n1,ll n2,lo m){
-    while(m<min(n1,n2)&&m!=0){
-        n1-=m;
-        n2-=m;
-        --m;
-    }
-    if(m!=0)
-        return (max(n1,n2)-min(n1,n2));
-    else
-        return (n1+n2);
+    ll sum=m*(m+1)/2, res=min(n1,n2);
+    return (n1+n2-2*min(sum,res));
 }
 int main(){
     test{
