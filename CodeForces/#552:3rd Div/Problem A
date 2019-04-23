@@ -1,0 +1,22 @@
+//http://codeforces.com/contest/1154/problem/A
+#include<bits/stdc++.h>
+#define FastIO ios_base::sync_with_stdio(false);    cin.tie(false);
+#define test int t; cin>>t; while(t--)
+#define loop(i,a,b) for(int i=a;i<b;++i)
+#define MOD 1000000007
+#define lo long
+#define ll long long
+using namespace std;
+
+int main(){
+    ll arr[4],res=0;
+    loop(i,0,4){
+        cin>>arr[i];
+        res=max(res,arr[i]);
+    }
+    loop(i,0,4){
+        if(arr[i]!=res)
+            cout<<(res-arr[i])<<" ";
+    }
+    return 0;
+}
