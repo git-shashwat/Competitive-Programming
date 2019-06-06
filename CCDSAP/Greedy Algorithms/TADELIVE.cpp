@@ -23,13 +23,10 @@ int main(){
         if(diff>=0)  positive_a.push_back(make_pair(i,diff));
         else         positive_b.push_back(make_pair(i,-1*diff));
     }
-    sort(positive_a.begin(),positive_a.end(),[](const pair <lo,lo> p1, const pair <lo,lo> p2){
-        return p1.second > p2.second;
-    });
-    sort(positive_b.begin(),positive_b.end(),[](const pair <lo,lo> p1, const pair <lo,lo> p2){
-        return p1.second > p2.second;
-    });
     if(x<=y){
+        sort(positive_a.begin(),positive_a.end(),[](const pair <lo,lo> p1, const pair <lo,lo> p2){
+        return p1.second > p2.second;
+    });
         while(x!=0 && !positive_a.empty()){
             cur = positive_a.begin()->first;
                 pos[cur]=true;
@@ -42,6 +39,9 @@ int main(){
         }
     }
     else{
+        sort(positive_b.begin(),positive_b.end(),[](const pair <lo,lo> p1, const pair <lo,lo> p2){
+        return p1.second > p2.second;
+    });
         while(y!=0 && !positive_b.empty()){
             cur = positive_b.begin()->first;
             pos[cur] = true;
