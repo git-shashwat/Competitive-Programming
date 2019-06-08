@@ -6,6 +6,8 @@
 #define MOD 1000000007
 #define lo long
 #define ll long long
+#define push_back pb
+#define pop_back po
 using namespace std;
 
 int main(){
