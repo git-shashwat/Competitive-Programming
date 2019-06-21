@@ -4,10 +4,11 @@
 #define test int t; cin>>t; while(t--)
 #define loop(i,a,b) for(int i=a;i<b;++i)
 #define MOD 1000000007
-#define lo long
+#define ull unsigned long long
 #define ll long long
 #define push_back pb
 #define pop_back po
+
 using namespace std;
 
 int main(){
