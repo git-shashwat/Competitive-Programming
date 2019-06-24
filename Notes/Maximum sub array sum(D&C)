@@ -1,0 +1,12 @@
+This algo uses Divide and conquer approach.
+Maximum sub array sum is the maximum of the following results:
+
+a. maximum sub array sum of left half (Recursive Function)
+b. maximum sub array sum of right half (Recursive Function)
+c. maximum sub array sum passing through mid element.(O(n))
+
+[Source]: https://www.geeksforgeeks.org/maximum-subarray-sum-using-divide-and-conquer-algorithm/
+
+*Additional Information*
+Library: limits.h
+used for macro such as INT_MIN.
