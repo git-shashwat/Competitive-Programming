@@ -1,0 +1,5 @@
+Used to count number of set bits of a number(n)
+1. Initialize count = 0
+2. n &= (n-1)
+3. count ++
+4. Repeat step 3
