@@ -1,6 +1,6 @@
 //
 #include<bits/stdc++.h>
-#define FastIO ios_base::sync_with_stdio(false);    cin.tie(false);
+#define FastIO ios_base::sync_with_stdio(0);    cin.tie(0);   cout.tie(0);
 #define test int t; cin>>t; while(t--)
 #define loop(i,a,b) for(int i=a;i<b;++i)
 #define loop0(b) for(int i=0;i<b;++i)
