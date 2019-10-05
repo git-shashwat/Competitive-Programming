@@ -17,14 +17,13 @@ int main(){
         int n;
         cin>>n;
         ull a[n];
-        vector <ull> v;
+        multiset <ull> v;
         loop0(n) {
             cin>>a[i];
-            auto itr = upper_bound(v.begin(), v.end(), a[i]);
-            if (itr == v.end()) {
-                v.pb(a[i]);
-            } else {
-                *itr = a[i];
+            auto itr = v.insert(a[i]);
+            itr++;
+            if (itr != v.end()){
+                v.erase(itr);
             }
         }
         cout<<v.size()<<" ";
