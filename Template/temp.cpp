@@ -7,6 +7,7 @@
 #define MOD 1000000007
 #define ull unsigned long long
 #define ll long long
+#define all(x) x.begin(), x.end()
 #define pb push_back 
 #define po pop_back 
 
