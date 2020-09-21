@@ -9,7 +9,12 @@
 #define MOD 1000000007
 #define ull unsigned long long
 #define ll long long
+#define vi vector<int>
+#define vl vector<ll>
+#define mp map<int,int>
+#define si set<int>
 #define all(x) x.begin(), x.end()
+#define mp make_pair
 #define pb push_back 
 #define po pop_back 
 
