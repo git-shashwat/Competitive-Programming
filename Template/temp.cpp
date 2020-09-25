@@ -11,7 +11,7 @@
 #define ll long long
 #define vi vector<int>
 #define vl vector<ll>
-#define mp map<int,int>
+#define mi map<int,int>
 #define si set<int>
 #define all(x) x.begin(), x.end()
 #define mp make_pair
