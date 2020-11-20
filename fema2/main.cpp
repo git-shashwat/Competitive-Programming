@@ -20,42 +20,14 @@
 
 using namespace std;
 
-int func(int i, int k, vi iron, int low, int high, int minAp, bool atti[], int sheet[], int block[]) {
-	if (low <= high) {
-		int mid = (low + high) / 2;
-		int j = iron[mid];
-		int ap = k + 1 - abs(i - j) - abs(sheet[i] - sheet[j]);
-		
-		if (atti[j] || abs(block[i] - block[j]) != 0 || ap <= 0 ) {
-			if (i < j) 
-				return func(i, k, iron, low, mid-1, minAp, atti, sheet, block);
-			else
-				return func(i, k, iron, mid+1, high, minAp, atti, sheet, block);
-		}
-		
-		else {
-			minAp = min(minAp, ap);
-			int p1 = func(i, k, iron, low, mid-1, minAp, atti, sheet, block);
-			int p2 = func(i, k, iron, mid+1, high, minAp, atti, sheet, block);
-			
-			cout<<i<<" "<<j<<" "<<p1<<" "<<p2<<endl;
-			
-			if (p1 != -1 && abs(i-p1) < abs(i-j))	return p1;
-			else if (p2 != -1 && abs(i-p2) < abs(i-j))	return p2;
-			else return j;
-		}
-	}
-	return -1;
-}
-
 int main(){
     test {
     	int n, k, ans = 0;
     	map <char, vector<int> > loc;
+    	mi atti;
     	cin>>n>>k;
     	char s[n];
     	int sheet[n], block[n];
-    	bool atti[n] = { false };
     	loop0(n) {
     		cin>>s[i];
     		loc[s[i]].pb(i);
@@ -70,14 +42,41 @@ int main(){
     	
     	auto mag = loc['M'], iron = loc['I'];
     	loop0(mag.size()) {
-			int pos = func(mag[i], k, iron, 0, iron.size(), INT_MAX, atti, sheet, block);
-			if (pos != -1) {
+   	    	int low = 0, high = iron.size() - 1, minAp = INT_MAX, ironIndex = -1;
+			while (low <= high) {
+				int mid = (low + high) / 2;
+				int ap = k + 1 - abs(mag[i] - iron[mid]) - abs(sheet[mag[i]] - sheet[iron[mid]]);
+				
+				if (!atti[iron[mid]] && abs(block[mag[i]] - block[iron[mid]]) == 0 && ap > 0 ) {
+					if (ap > minAp) {
+						break;
+					}
+					minAp = ap;
+					ironIndex = iron[mid];
+									
+					if (mag[i] > iron[mid]) {
+						high = mid - 1;
+					} else {
+						low = mid + 1;
+					}
+				}
+				
+				if (mag[i] < iron[mid]) {
+					high = mid - 1;
+				} else {
+					low = mid + 1;
+				}
+			}
+			if (ironIndex != -1) {
+				cout<<ironIndex<<" "<<minAp<<endl;
+				atti[ironIndex] = 1;
 				ans++;
-				atti[pos] = true;
 			}
     	}
     	cout<<ans<<endl;
     }
     return 0;
 }
+
+
 
