@@ -60,21 +60,18 @@ void printArray(int arr[], int n)
 }
 
 int main(){
-	const int n = 100000;
-    int arr[n];
- 	loop0(n) {
-		arr[i] = n - i;
-	}
+	int arr[] = {17, 4, 93, 32, 57};
+	int n = 5;
 	clock_t start, stop;
 	cout<<"**** Heap Sort ****\n";
 
 	cout<<"Given array is: ";
-//	printArray(arr, n);
+	printArray(arr, n);
 
 	start = clock();
     heapSort(arr, n);
     cout << "Sorted array is: ";
-//    printArray(arr, n);
+    printArray(arr, n);
 	stop = clock();
 
 	float t = (stop - start) / CLOCKS_PER_SEC;
