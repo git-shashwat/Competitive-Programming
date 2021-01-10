@@ -1,4 +1,4 @@
-//https://www.codechef.com/DEC20B/problems/POSPREFS
+//https://www.codechef.com/JAN21C/problems/BILLRD
 #include<bits/stdc++.h>
 #define FastIO ios_base::sync_with_stdio(0);    cin.tie(0);   cout.tie(0);
 #define test int t; cin>>t; while(t--)
@@ -20,15 +20,9 @@
 
 using namespace std;
 
-/*
-	Ai is either i or -i
-	A1 + A2 + ... + Ai > 0
-*/
-
 int main(){
     test {
-		int n, k;
-		cin>>n>>k;
+    	ll n, k, x, y;
     }
     return 0;
 }
